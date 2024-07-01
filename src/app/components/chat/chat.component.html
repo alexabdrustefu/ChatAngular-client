@@ -1,0 +1,18 @@
+<div>
+  <input [(ngModel)]="userName" placeholder="Enter your username">
+  <button (click)="joinChat()">Join Chat</button>
+  <input [(ngModel)]="chatRoom" placeholder="Enter chat room">
+  <button (click)="joinSpecificChatRoom()">Join Room</button>
+</div>
+
+<div>
+  <input [(ngModel)]="message" placeholder="Enter your message">
+  <button (click)="sendMessage()">Send</button>
+</div>
+
+<div *ngIf="!signalrService.isConnected">
+  Connecting...
+</div>
+<div *ngIf="signalrService.isConnected">
+  Connected
+</div>
